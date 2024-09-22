@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const sketch = document.createElement('div');
     const square = document.createElement('div');
 
-    sketch.style.cssText = "background: black; width: 600px; height: 600px; max-height: 604px; display: flex; flex-flow: row wrap; border: 1px dotted black; font-size: 0;";
+    sketch.style.cssText = "background: black; width: 600px; height: 600px; max-height: 600px; display: flex; flex-flow: row wrap; border: 1px dotted black; font-size: 0;";
     sketch.classList.add("sketch");
     box.appendChild(sketch);
 
@@ -12,12 +12,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     square.classList.add("square");
     let numberOfPx = 100;
-    let css = 602 / numberOfPx + "px";
+    let css = 600 / numberOfPx + "px";
     square.style.cssText = "height: " + css + "; width: " + css + "; flex: 0 1 auto; line-height: 0px; background: black;";
 
     function createSquares(numberOfPx) {
         sketch.innerHTML = ''; // Clear the sketch container
-        let css = 602 / numberOfPx + "px";
+        let css = 600 / numberOfPx + "px";
         square.style.cssText = "height: " + css + "; width: " + css + "; flex: 0 1 auto; line-height: 0px; background: black;";
 
         for (let i = 0; i < numberOfPx * numberOfPx; i++) {
@@ -101,66 +101,3 @@ document.addEventListener('DOMContentLoaded', function() {
         createSquares(numberOfPx);
     });
 });
-
-
-document.addEventListener('DOMContentLoaded', function() {
-const box = document.querySelector('.box');
-const sketch = document.createElement('div');
-const square = document.createElement('div');
-
-
-sketch.style.cssText = "background : black; width: 600px; height: 600px; max-height : 604px; display : flex; flex-flow: row wrap; border : 1px dotted black; font-size : 0;";
-sketch.classList.add("sketch");
-box.appendChild(sketch);
-
-const add = document.querySelector('.add');
-
-let number;
-
-
-square.classList.add("square");
-let numberOfPx = 100;
-let css = "" + 602 / numberOfPx + "px ;";
-square.style.cssText = "height: " + css + "width: " +css + "flex: 0 1 auto; line-height: 0px; background : black;";
-
-for(let i = 0; i < numberOfPx * numberOfPx; i++) {
-    sketch.appendChild(square.cloneNode(1));
-    console.log(numberOfPx);
-}
-
-
-
-const sq = document.querySelectorAll('.square');
-
-
-
-const erase = document.querySelector('.eraser');
-const eraser = document.querySelector('.format');
-
-
-
-
-erase.addEventListener('click', function() {
-    sq.forEach((div) => {
-        div.addEventListener('mouseover', function() {
-            div.style.background = "black";
-        })
-    })
-})
-
-eraser.addEventListener('click', function() {
-    sq.forEach((div) => {
-            div.style.background = "black";
-    })
-})
-
-
-sq.forEach((div) => {
-    div.addEventListener('mouseover', function() {
-        div.style.background = "white";
-    })
-})
-
-
-});
-
